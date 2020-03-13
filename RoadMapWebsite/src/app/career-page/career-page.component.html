@@ -1,0 +1,10 @@
+<div *ngIf='career'>
+  <h1>{{career.name}}</h1>
+  <p>{{career.shortDescription}}</p>
+  <h4>Salary: {{career.salaryRange[0] | currency : 'USD' : 'symbol' : '1.0-0'}} - {{career.salaryRange[1] | currency : 'USD' : 'symbol' : '1.0-0'}}</h4>
+  <h4>Prior Experience: {{career.priorExperience}}</h4>
+  <h4>Estimated Time to Completion: {{career.estimatedCompletion}}</h4>
+  <p>{{career.description}}</p>
+  <button (click)="goBack()">go back</button>
+</div>
+

@@ -1,0 +1,14 @@
+<div *ngIf='sector'>
+  <h1>{{sector.name}}</h1>
+  <p>{{sector.description}}</p>
+
+  <div *ngFor='let career of careers'>
+    <div *ngIf='sector.careers.includes(career.id)'>
+      <h2>{{career.name}}</h2>
+      <p>{{career.shortDescription}}</p>
+      <a routerLink="/career/{{career.id}}">See Career</a>
+    </div>
+  </div>
+
+  <button (click)="goBack()">go back</button>
+</div>
