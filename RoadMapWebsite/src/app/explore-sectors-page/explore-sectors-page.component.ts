@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 
-import { CareerSectorService } from '../career-sector.service';
+import { CareerSectorService } from '../core/model-services/career-sector.service';
 import { CareerSector } from '../core/models/career-sector';
 
 @Component({

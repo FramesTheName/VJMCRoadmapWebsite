@@ -1,6 +1,5 @@
-export interface Job{
+export interface Skill{
     id: number;
     name: string;
     description: string;
-    link: URL;
 }

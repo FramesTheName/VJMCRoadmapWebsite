@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { CareerSectorService } from '../career-sector.service';
-import { CareerService } from '../career.service';
+import { CareerSectorService } from '../core/model-services/career-sector.service';
+import { CareerService } from '../core/model-services/career.service';
 import { CareerSector } from '../core/models/career-sector';
 import { Career } from '../core/models/career';
 

@@ -6,7 +6,7 @@ export interface Career{
     salaryRange: [number, number];
     priorExperience: string;
     estimatedCompletion: string;
-    //skillValue: Array<[number, number]>;
+    skillValue: Array<[number, number]>;
     //certValue: Array<[number, number]>;
     //mosValue: Array<[string, number]>;
 

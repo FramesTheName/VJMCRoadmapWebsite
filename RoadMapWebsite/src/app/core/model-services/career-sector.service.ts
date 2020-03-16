@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { SECTORS } from './core/mock-models/mock-sectors'
-import { CareerSector } from './core/models/career-sector'
+import { SECTORS } from '../mock-models/mock-sectors'
+import { CareerSector } from '../models/career-sector'
 
 @Injectable({
   providedIn: 'root'
