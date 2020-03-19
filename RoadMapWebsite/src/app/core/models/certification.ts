@@ -2,5 +2,5 @@ export interface Certification{
     id: number;
     name: string;
     description: string;
-    link: URL;
+    link: string;
 }

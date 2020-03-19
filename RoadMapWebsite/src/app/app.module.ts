@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { SectorPageComponent } from './sector-page/sector-page.component';
 import { CareerMatchPageComponent } from './career-match-page/career-match-page.component';
 import { ExploreSectorsPageComponent } from './explore-sectors-page/explore-sectors-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +19,13 @@ import { ExploreSectorsPageComponent } from './explore-sectors-page/explore-sect
     OverviewPageComponent,
     SectorPageComponent,
     CareerMatchPageComponent,
-    ExploreSectorsPageComponent
+    ExploreSectorsPageComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

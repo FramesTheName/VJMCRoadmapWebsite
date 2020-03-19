@@ -22,7 +22,7 @@ export const SECTORS: CareerSector[] = [
   {
     "id": 3,
     "name": "Hardware, Services & Infrastructure",
-    "description": "Build and maintain the foundations of an organization�s IT environment",
+    "description": "Build and maintain the foundations of an organization's IT environment",
     "careers": [
       2
     ]
@@ -57,7 +57,7 @@ export const SECTORS: CareerSector[] = [
   {
     "id": 8,
     "name": "Software Development",
-    "description": ".Write code and create software that entertains the masses, offers businesses a competitive edge, or frees people from repetitive and mundane tasks.",
+    "description": "Write code and create software that entertains the masses, offers businesses a competitive edge, or frees people from repetitive and mundane tasks.",
     "careers": []
   }
 ];
