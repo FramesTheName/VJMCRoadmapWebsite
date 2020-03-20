@@ -3,8 +3,7 @@ import { Location } from '@angular/common';
 
 import { Skill } from '../core/models/skill';
 import { SkillService } from '../core/model-services/skill.service';
-import { Certification } from '../core/models/certification';
-import { CertificationService } from '../core/model-services/certification.service';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-career-match-page',
@@ -13,27 +12,26 @@ import { CertificationService } from '../core/model-services/certification.servi
 })
 export class CareerMatchPageComponent implements OnInit {
   skills: Skill[];
-  certifications: Certification[];
-  selectedCertifcations: Certification[];
-  model: Certification;
+  userForm = this.fb.group({
+    MOSNumber: [''],
+    firstSkill: ['', Validators.required],
+    secondSkill: ['', Validators.required],
+    thirdSkill: ['', Validators.required],
+  });
 
   constructor(
     private location: Location,
     private skillService: SkillService,
-    private certificationService: CertificationService,
+    private fb: FormBuilder
         ) { }
 
   ngOnInit() {
     this.getSkills();
-    this.getCertifications();
+    this.buildForms
   }
 
-  calculateCareer(): void {
+  buildForms(){
 
-  }
-
-  onSelect(certification: Certification): void {
-    this.selectedCertifcations.push(certification);
   }
 
   getSkills() {
@@ -41,13 +39,13 @@ export class CareerMatchPageComponent implements OnInit {
       .subscribe(skills => this.skills = skills);
   }
 
-  getCertifications() {
-    this.certificationService.getCertifications()
-      .subscribe(certifications => this.certifications = certifications);
-  }
-
   goBack(): void {
     this.location.back();
+  }
+
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.userForm.value);
   }
 
 }

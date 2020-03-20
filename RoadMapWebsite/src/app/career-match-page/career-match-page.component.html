@@ -1,34 +1,25 @@
 <h1> Lets Find a Career For You!</h1>
-<div class="container">
-    <h1>Hero Form</h1>
-    <form>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label>
+        Military Branch Ocuppation Code:
+        <input type="text" formControlName="MOSNumber" title="i.e. 11B (MOS), HM-8451 (NEC), 4N1X1 (AFSC), ect...">
+    </label>
 
-    </form>
-</div>
+    <div><label>Skill 1: </label>
+        <select formControlName="firstSkill">
+            <option *ngFor="let skill of skills" [value]="skill.id" required title="{{skill.description}}">{{skill.name}}</option>
+        </select>
+    </div>
+    <div><label>Skill 2: </label>
+        <select formControlName="secondSkill">
+            <option *ngFor="let skill of skills" [value]="skill.id" required title="{{skill.description}}">{{skill.name}}</option>
+        </select>   
+    </div>
+    <div><label>Skill 3: </label>
+        <select formControlName="thirdSkill">
+            <option *ngFor="let skill of skills" [value]="skill.id" required title="{{skill.description}}">{{skill.name}}</option>
+        </select>
+    </div>
+    <button type="submit" [disabled]="!userForm.valid">Calculate Career</button>
+</form> 
 <button (click)="goBack()">go back</button>
-
-<div><label>Skill 1: </label>
-    <select>
-        <option *ngFor="let skill of skills" [value]="skill">{{skill.name}}</option>
-    </select>
-</div>
-<div><label>Skill 2: </label>
-    <select>
-        <option *ngFor="let skill of skills" [value]="skill">{{skill.name}}</option>
-    </select>
-</div>
-<div><label>Skill 3: </label>
-    <select>
-        <option *ngFor="let skill of skills" [value]="skill">{{skill.name}}</option>
-    </select>
-</div>
-<div>
-    Certifications: 
-        <ul class="certifications">
-            <li *ngFor="let certification of certifications"
-                (click)="onSelect(certification)">
-                <span class="badge">{{certification.id}}</span>{{certification.name}}
-            </li>
-        </ul>
-</div>
-<button (click)="calculateCareer()">Calculate Career</button>
