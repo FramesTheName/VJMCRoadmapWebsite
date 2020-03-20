@@ -8,7 +8,7 @@ import { CareerSector } from '../core/models/career-sector';
 @Component({
   selector: 'app-explore-sectors-page',
   templateUrl: './explore-sectors-page.component.html',
-  styleUrls: ['./explore-sectors-page.component.css']
+  styleUrls: ['./explore-sectors-page.component.scss']
 })
 export class ExploreSectorsPageComponent implements OnInit {
   sectors: CareerSector[];

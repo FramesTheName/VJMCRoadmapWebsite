@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 @Component({
   selector: 'app-career-match-page',
   templateUrl: './career-match-page.component.html',
-  styleUrls: ['./career-match-page.component.css']
+  styleUrls: ['./career-match-page.component.scss']
 })
 export class CareerMatchPageComponent implements OnInit {
   skills: Skill[];

@@ -8,7 +8,7 @@ import { Career } from '../core/models/career';
 @Component({
   selector: 'app-career-page',
   templateUrl: './career-page.component.html',
-  styleUrls: ['./career-page.component.css']
+  styleUrls: ['./career-page.component.scss']
 })
 export class CareerPageComponent implements OnInit {
   career: Career;
