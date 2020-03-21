@@ -6,20 +6,49 @@
     </label>
 
     <div><label>Skill 1: </label>
-        <select formControlName="firstSkill">
+        <select mat-select formControlName="firstSkill">
             <option *ngFor="let skill of skills" [value]="skill.id" required title="{{skill.description}}">{{skill.name}}</option>
         </select>
     </div>
     <div><label>Skill 2: </label>
-        <select formControlName="secondSkill">
+        <select mat-select formControlName="secondSkill">
             <option *ngFor="let skill of skills" [value]="skill.id" required title="{{skill.description}}">{{skill.name}}</option>
         </select>   
     </div>
     <div><label>Skill 3: </label>
-        <select formControlName="thirdSkill">
+        <select mat-select formControlName="thirdSkill">
             <option *ngFor="let skill of skills" [value]="skill.id" required title="{{skill.description}}">{{skill.name}}</option>
         </select>
     </div>
+
+    <mat-slider min="1" max="5" step="1" value="1" thumbLabel tickInterval="1"></mat-slider>
+    <mat-form-field class="example-chip-list">
+        <mat-chip-list #chipList aria-label="Certification selection">
+          <mat-chip
+            *ngFor="let certification of myCertifications"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(certification)">
+            {{certification}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="New certification..."
+            #certificationInput
+            [formControl]="certCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let certification of filteredCertifications | async" [value]="certification">
+            {{certification}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
     <button type="submit" [disabled]="!userForm.valid">Calculate Career</button>
 </form> 
+
 <button (click)="goBack()">go back</button>
