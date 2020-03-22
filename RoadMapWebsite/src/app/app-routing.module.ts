@@ -6,14 +6,16 @@ import { OverviewPageComponent } from './overview-page/overview-page.component';
 import { SectorPageComponent } from './sector-page/sector-page.component';
 import { CareerMatchPageComponent } from './career-match-page/career-match-page.component';
 import { ExploreSectorsPageComponent} from './explore-sectors-page/explore-sectors-page.component';
+import { RoadmapPageComponent } from './roadmap-page/roadmap-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/overview', pathMatch: 'full'},
-  { path: 'overview', component: OverviewPageComponent },
-  { path: 'career/:id', component: CareerPageComponent },
-  { path: 'sectors/:id', component: SectorPageComponent},
-  { path: 'matching', component: CareerMatchPageComponent},
-  { path: 'sectors', component: ExploreSectorsPageComponent}
+  { path: '', redirectTo: '/Overview', pathMatch: 'full'},
+  { path: 'Overview', component: OverviewPageComponent },
+  { path: 'Career/:id', component: CareerPageComponent },
+  { path: 'Sectors/:id', component: SectorPageComponent},
+  { path: 'Matching', component: CareerMatchPageComponent},
+  { path: 'Sectors', component: ExploreSectorsPageComponent},
+  { path: 'Roadmap', component: RoadmapPageComponent},
   
 ];
 
