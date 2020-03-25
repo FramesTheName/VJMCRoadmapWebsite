@@ -41,6 +41,22 @@ export class CareerMatchPageComponent implements OnInit {
   myCertifications: string[] = [];
   allCertifications: string[] = [];
 
+  constructor(
+    private location: Location,
+    private skillService: SkillService,
+    private fb: FormBuilder,
+    private certificationService: CertificationService,
+        ) { 
+          this.filteredCertifications = this.certCtrl.valueChanges.pipe(
+            startWith(null),
+            map((certification: string | null) => certification ? this._filter(certification) : this.allCertifications.slice()));
+        }
+
+  ngOnInit() {
+    this.getSkills();
+    this.getCerts();
+  }
+  
   @ViewChild('certificationInput') certificationInput: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
@@ -79,23 +95,6 @@ export class CareerMatchPageComponent implements OnInit {
     const filterValue = value.toLowerCase();
 
     return this.allCertifications.filter(certification => certification.toLowerCase().indexOf(filterValue) === 0);
-  }
-
-
-  constructor(
-    private location: Location,
-    private skillService: SkillService,
-    private fb: FormBuilder,
-    private certificationService: CertificationService,
-        ) { 
-          this.filteredCertifications = this.certCtrl.valueChanges.pipe(
-            startWith(null),
-            map((certification: string | null) => certification ? this._filter(certification) : this.allCertifications.slice()));
-        }
-
-  ngOnInit() {
-    this.getSkills();
-    this.getCerts();
   }
 
   getmyCertifications(){
