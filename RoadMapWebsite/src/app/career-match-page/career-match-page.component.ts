@@ -27,6 +27,7 @@ export class CareerMatchPageComponent implements OnInit {
   certifications: Certification[];
   userForm = this.fb.group({
     MOSNumber: [''],
+    desiredCompletion: ['', Validators.required],
     firstSkill: ['', Validators.required],
     secondSkill: ['', Validators.required],
     thirdSkill: ['', Validators.required],
@@ -119,6 +120,7 @@ export class CareerMatchPageComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.userForm.value);
+    console.warn(this.myCertifications.toString());
   }
 
 }
