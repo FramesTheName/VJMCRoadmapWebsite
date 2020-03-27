@@ -1,20 +1,32 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Inject } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Location } from '@angular/common';
 import { MatChipInputEvent } from '@angular/material/chips';
-import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import  {MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 
 import { Skill } from '../core/models/skill';
 import { SkillService } from '../core/model-services/skill.service';
 import { Certification } from '../core/models/certification';
-import { CertificationService } from '../core/model-services/certification.service'
+import { CertificationService } from '../core/model-services/certification.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { MatchingService, CareerData } from './matching.service';
 
 
 export interface certification {
   name: string;
+}
+
+export class PreferenceData {
+    mosId: string;
+    skill1: number;
+    skill2: number;
+    skill3: number;
+    completiontime: string;
+    certifications: string[];
 }
 
 @Component({
@@ -27,10 +39,10 @@ export class CareerMatchPageComponent implements OnInit {
   certifications: Certification[];
   userForm = this.fb.group({
     MOSNumber: [''],
-    desiredCompletion: ['', Validators.required],
-    firstSkill: ['', Validators.required],
-    secondSkill: ['', Validators.required],
-    thirdSkill: ['', Validators.required],
+    desiredCompletion: [''], //Validators.required
+    firstSkill: [''],
+    secondSkill: [''],
+    thirdSkill: [''],
   });
   visible = true;
   selectable = true;
@@ -40,12 +52,16 @@ export class CareerMatchPageComponent implements OnInit {
   filteredCertifications: Observable<string[]>;
   myCertifications: string[] = [];
   allCertifications: string[] = [];
+  user = new PreferenceData();
+  data: CareerData;
 
   constructor(
     private location: Location,
     private skillService: SkillService,
     private fb: FormBuilder,
     private certificationService: CertificationService,
+    public dialog: MatDialog,
+    private matchingService: MatchingService,
         ) { 
           this.filteredCertifications = this.certCtrl.valueChanges.pipe(
             startWith(null),
@@ -104,7 +120,7 @@ export class CareerMatchPageComponent implements OnInit {
   getCerts() {
     this.certificationService.getCertifications()
       .subscribe(certifications => this.certifications = certifications);
-      this.allCertifications = this.certifications.map((a => a.name));
+    this.allCertifications = this.certifications.map((a => a.name));
   }
 
   getSkills() {
@@ -116,10 +132,44 @@ export class CareerMatchPageComponent implements OnInit {
     this.location.back();
   }
 
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.userForm.value);
-    console.warn(this.myCertifications.toString());
+  onSubmit(): void{
+    this.user.certifications == this.myCertifications;
+    this.user.skill1 == this.userForm.controls.firstSkill.value;
+    this.user.skill2 == this.userForm.controls.secondSkill.value;
+    this.user.skill3 == this.userForm.controls.thirdSkill.value;
+    //this.user.mosId == this.userForm.controls.mosId.value.toString;
+    //this.user.completiontime == this.userForm.controls.completiontime.value;
+    
+  }
+
+  calculateCareer(): void{
+    this.onSubmit();
+    this.data = this.matchingService.matchCareers(this.user);
+    const dialogRef = this.dialog.open(CareerPopup, {
+      width: '75%',
+      data: this.data,
+    });
+  }
+
+}
+
+@Component({
+  selector: 'career-popup',
+  templateUrl: 'career-match-popup.html',
+  styleUrls: ['./career-match-popup.component.scss']
+})
+export class CareerPopup {
+
+  constructor(
+    public dialogRef: MatDialogRef<CareerPopup>,
+    @Inject(MAT_DIALOG_DATA) public data: CareerData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  redirect(id:number): void {
+    this.dialogRef.close();
   }
 
 }

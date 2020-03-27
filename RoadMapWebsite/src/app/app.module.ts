@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,7 +11,7 @@ import { AppComponent } from './app.component';
 import { CareerPageComponent } from './career-page/career-page.component';
 import { OverviewPageComponent } from './overview-page/overview-page.component';
 import { SectorPageComponent } from './sector-page/sector-page.component';
-import { CareerMatchPageComponent } from './career-match-page/career-match-page.component';
+import { CareerMatchPageComponent, CareerPopup } from './career-match-page/career-match-page.component';
 import { ExploreSectorsPageComponent } from './explore-sectors-page/explore-sectors-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoadmapPageComponent } from './roadmap-page/roadmap-page.component';
@@ -26,9 +27,11 @@ import { RoadmapPageComponent } from './roadmap-page/roadmap-page.component';
     CareerMatchPageComponent,
     ExploreSectorsPageComponent,
     RoadmapPageComponent,
+    CareerPopup
   ],
   imports: [
     HttpClientModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

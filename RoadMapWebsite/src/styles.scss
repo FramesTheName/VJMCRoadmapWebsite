@@ -8,11 +8,43 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
+$vjm-brown: (
+    50 : #ececeb,
+    100 : #cfcece,
+    200 : #afaead,
+    300 : #8f8e8c,
+    400 : #777573,
+    500 : #5f5d5a,
+    600 : #575552,
+    700 : #4d4b48,
+    800 : #43413f,
+    900 : #32302e,
+    A100 : #f6c28d,
+    A200 : #f3a85e,
+    A400 : #ff8f1f,
+    A700 : #ff8205,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$RoadMapWebsite-primary: mat-palette($mat-indigo);
+$RoadMapWebsite-primary: mat-palette($vjm-brown);
 $RoadMapWebsite-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
