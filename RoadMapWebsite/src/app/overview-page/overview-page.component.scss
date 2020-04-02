@@ -1,3 +1,20 @@
 .title{
     margin-left: 5%;
 }
+.start{
+    text-align: right;
+    margin-right: 15%;
+}
+#overview-element{
+    cursor: default;
+    .node:hover{
+        cursor: pointer;
+        stroke: #f0d270 !important;
+        .inside{
+        fill: #f0d270 !important;
+        }
+    }
+
+    
+}
+
