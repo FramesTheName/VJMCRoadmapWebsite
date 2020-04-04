@@ -8,13 +8,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 1920 683"
+   viewBox="0 0 1920 573"
    version="1.1"
    id="svg283"
    sodipodi:docname="RoadPicture.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    width="1920"
-   height="683">
+   height="573">
   <metadata
      id="metadata287">
     <rdf:RDF>
@@ -40,15 +40,25 @@
      inkscape:window-height="986"
      id="namedview285"
      showgrid="false"
-     inkscape:zoom="0.40438907"
-     inkscape:cx="961.65953"
-     inkscape:cy="83.206021"
+     inkscape:zoom="0.61843094"
+     inkscape:cx="971.35354"
+     inkscape:cy="399.82002"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg283" />
   <defs
      id="defs21">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern59"
+       id="pattern65"
+       patternTransform="matrix(0.99944589,0,0,0.94422672,-19.378815,165.8413)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern54"
+       id="pattern59"
+       patternTransform="translate(-19.921741,110.06584)" />
     <style
        id="style2">
       .a4efb556-932d-447d-8cbe-05fa7cdac431, .a73504ea-bd28-41a0-8e2d-ce9b777e27f7, .a796a4e7-bdc0-4931-83fd-fdea441e9c6f, .a9ddd7bc-32db-4ba9-a1ac-ff93dfb2f156, .b32c8af8-a2c6-4c1f-910c-5ddad6520364, .b75565d1-77b0-45a4-8c69-a7d560299045, .e114927a-fe0a-4474-a5a2-1a65d8970f12, .e5b91ffc-ef54-4038-a1bf-a87ff8a1526c, .fbb5aefd-aa16-41d3-a751-fa96455d0062 {
@@ -322,16 +332,41 @@
          id="rect18-0"
          style="fill:none" />
     </clipPath>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="1968.9189"
+       height="688.25861"
+       patternTransform="translate(-19.921741,110.06584)"
+       id="pattern54">
+      <rect
+         y="0.51779526"
+         x="0.51779526"
+         height="687.22302"
+         width="1967.8833"
+         id="rect52"
+         style="opacity:1;fill:#a19a97;fill-opacity:1;stroke:#ffffff;stroke-width:1.03559053;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </pattern>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath61">
+      <rect
+         style="fill:url(#pattern65);stroke:none;stroke-width:0.97144401"
+         width="1967.828"
+         height="649.87219"
+         x="-19.378815"
+         y="165.84129"
+         id="rect63" />
+    </clipPath>
   </defs>
   <g
      id="g514"
-     transform="matrix(1.0005544,0,0,1.0006018,-0.53218254,-0.5322)">
+     transform="matrix(1.0005544,0,0,1.0006018,-0.53218254,-110.5322)">
     <g
        transform="matrix(1.0526316,0,0,1.1141376,-52.842106,-293.39821)"
        id="ff2d8335-0204-4b13-924d-d3646df37d1b"
        data-name="Example">
       <image
-         clip-path="url(#clipPath24)"
+         clip-path="url(#clipPath61)"
          id="a7162994-2c66-4bcc-a20b-e9942ec75b94"
          data-name="image"
          class="efc5685c-6625-42b8-9345-622ed470b6f9"

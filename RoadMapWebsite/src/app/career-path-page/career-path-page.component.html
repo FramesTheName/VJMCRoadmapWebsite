@@ -1,0 +1,17 @@
+<div>
+    <img src="../../assets/Phase3.svg" width ="100%">
+    </div>
+<div *ngIf='career' class="framework">
+    <div class="mat-display-3 title">{{career.name}}</div>
+    <div>
+    <img src="../../assets/CareerPathFiller.svg" width ="100%">
+    </div>
+</div>
+<div>
+<a routerLink="/Roadmap">
+    <button mat-button color=primary>
+        <span>Explore the Roadmap</span>
+    </button>
+</a>
+</div>
+<button mat-button color=primary (click)="goBack()">go back</button>

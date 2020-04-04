@@ -5,6 +5,7 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import  {MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
@@ -13,20 +14,12 @@ import { SkillService } from '../core/model-services/skill.service';
 import { Certification } from '../core/models/certification';
 import { CertificationService } from '../core/model-services/certification.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { MatchingService, CareerData } from './matching.service';
+import { PreferenceData, CareerData } from '../core/models/user';
+import { UserService } from '../core/model-services/user.service';
 
 
 export interface certification {
   name: string;
-}
-
-export class PreferenceData {
-    mosId: string;
-    skill1: number;
-    skill2: number;
-    skill3: number;
-    completiontime: string;
-    certifications: string[];
 }
 
 @Component({
@@ -61,7 +54,8 @@ export class CareerMatchPageComponent implements OnInit {
     private fb: FormBuilder,
     private certificationService: CertificationService,
     public dialog: MatDialog,
-    private matchingService: MatchingService,
+    private userService: UserService,
+    private router: Router,
         ) { 
           this.filteredCertifications = this.certCtrl.valueChanges.pipe(
             startWith(null),
@@ -71,6 +65,18 @@ export class CareerMatchPageComponent implements OnInit {
   ngOnInit() {
     this.getSkills();
     this.getCerts();
+    this.setData();
+  }
+
+  setData(): void{
+    this.user = this.userService.getPreferenceData();
+    this.userForm.controls.MOSNumber.setValue(this.user.mosId);
+    this.userForm.controls.firstSkill.setValue(this.user.skill1);
+    this.userForm.controls.secondSkill.setValue(this.user.skill2);
+    this.userForm.controls.thirdSkill.setValue(this.user.skill3);
+    this.userForm.controls.desiredCompletion.setValue(this.user.completiontime);
+    this.certCtrl.setValue(this.user.certifications);
+    this.myCertifications = this.user.certifications;
   }
   
   @ViewChild('certificationInput') certificationInput: ElementRef<HTMLInputElement>;
@@ -113,9 +119,6 @@ export class CareerMatchPageComponent implements OnInit {
     return this.allCertifications.filter(certification => certification.toLowerCase().indexOf(filterValue) === 0);
   }
 
-  getmyCertifications(){
-    
-  }
 
   getCerts() {
     this.certificationService.getCertifications()
@@ -133,43 +136,19 @@ export class CareerMatchPageComponent implements OnInit {
   }
 
   onSubmit(): void{
-    this.user.certifications == this.myCertifications;
-    this.user.skill1 == this.userForm.controls.firstSkill.value;
-    this.user.skill2 == this.userForm.controls.secondSkill.value;
-    this.user.skill3 == this.userForm.controls.thirdSkill.value;
-    //this.user.mosId == this.userForm.controls.mosId.value.toString;
-    //this.user.completiontime == this.userForm.controls.completiontime.value;
+    this.user.certifications = this.myCertifications;
+    this.user.skill1 = this.userForm.controls.firstSkill.value;
+    this.user.skill2 = this.userForm.controls.secondSkill.value;
+    this.user.skill3 = this.userForm.controls.thirdSkill.value;
+    this.user.mosId = this.userForm.controls.MOSNumber.value;
+    this.user.completiontime = this.userForm.controls.desiredCompletion.value;
     
   }
 
   calculateCareer(): void{
     this.onSubmit();
-    this.data = this.matchingService.matchCareers(this.user);
-    const dialogRef = this.dialog.open(CareerPopup, {
-      width: '75%',
-      data: this.data,
-    });
-  }
-
-}
-
-@Component({
-  selector: 'career-popup',
-  templateUrl: 'career-match-popup.html',
-  styleUrls: ['./career-match-popup.component.scss']
-})
-export class CareerPopup {
-
-  constructor(
-    public dialogRef: MatDialogRef<CareerPopup>,
-    @Inject(MAT_DIALOG_DATA) public data: CareerData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-  redirect(id:number): void {
-    this.dialogRef.close();
+    this.data = this.userService.matchCareers(this.user);
+    this.router.navigate(['MyCareers']);
   }
 
 }

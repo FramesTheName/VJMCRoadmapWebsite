@@ -5,6 +5,7 @@
   <h4>Prior Experience: {{career.priorExperience}}</h4>
   <h4>Estimated Time to Completion: {{career.estimatedCompletion}}</h4>
   <p>{{career.description}}</p>
-  <button mat-button color=primary (click)="goBack()">go back</button>
+  <a routerLink="/CareerPath/{{career.id}}"><button mat-button color=primary>See this Career Path</button></a>
 </div>
+<button mat-button color=primary (click)="goBack()">go back</button>
 
