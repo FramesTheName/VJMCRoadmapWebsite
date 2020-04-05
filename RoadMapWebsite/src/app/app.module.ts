@@ -17,6 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoadmapPageComponent } from './roadmap-page/roadmap-page.component';
 import { CareerPathPageComponent } from './career-path-page/career-path-page.component';
 import { MyCareersPageComponent } from './my-careers-page/my-careers-page.component';
+import { CaseStudyPageComponent } from './case-study-page/case-study-page.component';
+import { CaseStudyPopupComponent } from './career-path-page/case-study-popup/case-study-popup.component';
 
 
 
@@ -30,7 +32,9 @@ import { MyCareersPageComponent } from './my-careers-page/my-careers-page.compon
     ExploreSectorsPageComponent,
     RoadmapPageComponent,
     CareerPathPageComponent,
-    MyCareersPageComponent
+    MyCareersPageComponent,
+    CaseStudyPageComponent,
+    CaseStudyPopupComponent
   ],
   imports: [
     HttpClientModule,

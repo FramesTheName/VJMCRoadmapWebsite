@@ -1,9 +1,35 @@
 .framework{
     text-align: center;
 }
+.first-line{
+    width: 100%;
+    display: inline-flexbox;
+}
+
+.mat-display-3{
+    width: 40%;
+    align-self: flex-start;
+    margin-right: 2%;
+    padding-right: 2%;
+}
 .title{
     text-align: left;
     margin-left: 7.5%;
     margin-bottom: 7.5%;
     margin-top: 2%;
+    align-self: flex-start;
 }
+.study-button{
+    text-align: right;
+    align-self: flex-end;
+    margin-right: 10%;
+    margin-top: -11%;
+    margin-bottom: 5%;  
+}
+.study-button-words{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    line-height: 120%;
+    text-align: center;
+}
+

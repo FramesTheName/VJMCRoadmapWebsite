@@ -9,6 +9,7 @@ import { ExploreSectorsPageComponent} from './explore-sectors-page/explore-secto
 import { RoadmapPageComponent } from './roadmap-page/roadmap-page.component';
 import { CareerPathPageComponent } from './career-path-page/career-path-page.component';
 import { MyCareersPageComponent } from './my-careers-page/my-careers-page.component';
+import { CaseStudyPageComponent } from './case-study-page/case-study-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Overview', pathMatch: 'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'Sectors', component: ExploreSectorsPageComponent},
   { path: 'Roadmap', component: RoadmapPageComponent},
   { path: 'MyCareers', component: MyCareersPageComponent},
+  { path: 'CaseStudy/:id', component: CaseStudyPageComponent},
   
 ];
 

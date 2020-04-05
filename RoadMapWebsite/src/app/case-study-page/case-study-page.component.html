@@ -1,0 +1,22 @@
+<div *ngIf='study' class="framework">
+    <div class="mat-display-3 title">{{study.job}}
+        <mat-divider></mat-divider>
+    </div>
+    
+    <div class="row">
+    <div class="column">
+        <div class="center">
+        <iframe [class.thumbnail]="thumbnail" [src]="safeSrc" width="378" height="213.3" frameborder="0" webkitallowfullscreen mozallowfullscreen
+      allowfullscreen></iframe>
+    </div>
+    </div>
+    <div class="colunn mat-body-1">
+      <div><span class="mat-body-2">Name: </span>{{study.name}}</div>
+      <div><span class="mat-body-2">Company: </span>{{study.company}}</div>
+      <div><span class="mat-body-2">Military Branch: </span>{{study.militaryBranch}}</div>
+      <div><span class="mat-body-2">Years Served: </span>{{study.yearsServed[0]}}-{{study.yearsServed[1]}}</div>
+    </div>
+</div>
+<div class="colunn mat-body-1 story">{{study.story}}</div>
+</div>
+<button mat-button color=primary (click)="goBack()">go back</button>

@@ -2,7 +2,15 @@
     <img src="../../assets/Phase3.svg" width ="100%">
     </div>
 <div *ngIf='career' class="framework">
-    <div class="mat-display-3 title">{{career.name}}</div>
+    <div class="first-line">
+    <div class="mat-display-3 title">{{career.name}}
+    </div>
+    <div class="study-button">
+        <button mat-flat-button color=primary (click)="openDialog()">
+            <p class="study-button-words">Click here to see stories of <br> others who have come before</p>
+        </button>
+    </div>
+    </div>
     <div>
     <img src="../../assets/CareerPathFiller.svg" width ="100%">
     </div>

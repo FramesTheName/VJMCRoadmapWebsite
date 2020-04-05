@@ -1,0 +1,26 @@
+<div mat-dialog-actions class="career-popup">
+    <mat-card class="title">  
+        <mat-card-title class="mat-display-2">Case Studies
+          <mat-divider></mat-divider>
+        </mat-card-title>
+        <mat-card-content class="mat-h2">Click on a card to see the story of someone who has walked the path before</mat-card-content>
+    </mat-card>
+    <mat-card class="case-study" *ngFor="let study of data" routerLink="/CaseStudy/{{study.id}}" 
+    (click)="onNoClick()" mat-ripple>
+          <mat-card-title>{{study.name}}</mat-card-title>
+          <mat-card-content>
+            <div>
+            <span>Job: </span>{{study.job}}
+          </div>
+          <div>
+            <span>Company: </span>{{study.company}}
+          </div>
+          <div>
+            <span>Military Branch: </span>{{study.militaryBranch}}
+          </div>
+          </mat-card-content>
+    </mat-card>
+    <div>
+      <button mat-button color=primary (click)="onNoClick()">No Thanks</button>
+    </div>
+  </div>
