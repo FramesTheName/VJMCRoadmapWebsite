@@ -10,9 +10,9 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-        "styleext": "scss"
+          "styleext": "scss"
         }
-        },
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -108,6 +108,10 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     },
