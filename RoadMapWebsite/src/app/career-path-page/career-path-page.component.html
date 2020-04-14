@@ -15,6 +15,63 @@
     <img src="../../assets/CareerPathFiller.svg" width ="100%">
     </div>
 </div>
+
+<div *ngIf='entryCerts?.length > 0'>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-expansion-title><h1>Entry Certifications</h1></mat-expansion-title>
+        </mat-expansion-panel-header>
+    <mat-action-list>
+        <button mat-list-item *ngFor='let cert of entryCerts'>
+            <span><b>{{cert.name}}</b>  {{cert.description}}</span>
+        </button>
+    </mat-action-list>
+    </mat-expansion-panel>
+</div>
+<mat-divider></mat-divider>
+<div *ngIf='beginCerts?.length > 0'>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-expansion-title><h1>Beginning Certifications</h1></mat-expansion-title>
+        </mat-expansion-panel-header>
+        <mat-action-list>
+            <button mat-list-item *ngFor='let cert of beginCerts'>
+                <span><b>{{cert.name}}</b>  {{cert.description}}</span>
+            </button>
+        </mat-action-list>
+        </mat-expansion-panel>
+</div>
+<mat-divider></mat-divider>
+<div *ngIf='medCerts?.length > 0'>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-expansion-title><h1>Intermediate Certifications</h1></mat-expansion-title>
+        </mat-expansion-panel-header>
+        <mat-action-list>
+            <button mat-list-item *ngFor='let cert of medCerts'>
+                <span><b>{{cert.name}}</b>  {{cert.description}}</span>
+            </button>
+        </mat-action-list>
+        </mat-expansion-panel>
+</div>
+<mat-divider></mat-divider>
+<div *ngIf='advCerts?.length > 0'>
+    <mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-expansion-title><h1>Advanced Certifications</h1></mat-expansion-title>
+        </mat-expansion-panel-header>
+        <mat-action-list>
+            <button mat-list-item *ngFor='let cert of advCerts'>
+                <span><b>{{cert.name}}</b>  {{cert.description}}</span>
+            </button>
+        </mat-action-list>
+        </mat-expansion-panel>
+</div>
+<mat-divider></mat-divider>
+
+
+
+
 <div>
 <a routerLink="/Roadmap">
     <button mat-button color=primary>

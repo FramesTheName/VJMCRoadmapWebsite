@@ -33,3 +33,8 @@
     text-align: center;
 }
 
+.mat-expansion-panel{
+    box-shadow: none;
+    outline-width: 1px;
+    outline-color: beige;
+}
