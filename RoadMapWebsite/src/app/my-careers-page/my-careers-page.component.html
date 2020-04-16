@@ -2,27 +2,31 @@
   <img src="../../assets/Phase2.svg" width ="100%">
 </div>
 <div class="framework" *ngIf="myMatches">
+<div class="mat-display-1 head">Here is your top Sector</div>
     <mat-card class="sector" *ngIf="myMatches.sector" routerLink="/Sectors/{{myMatches.sector.id}}"
      mat-ripple>  
         <mat-card-title>{{myMatches.sector.name}}</mat-card-title>
         <mat-card-content>{{myMatches.sector.description}}</mat-card-content>
     </mat-card>
-    <div>
-    <mat-card class="career" *ngIf="myMatches.careerOne" routerLink="/Career/{{myMatches.careerOne.id}}" 
+    <div class="row">
+      <div class="mat-display-1 head">Here are your top three Careers</div>
+      <div class="careers">
+    <mat-card class="career column" *ngIf="myMatches.careerOne" routerLink="/Career/{{myMatches.careerOne.id}}" 
      mat-ripple>
           <mat-card-title>{{myMatches.careerOne.name}}</mat-card-title>
           <mat-card-content>{{myMatches.careerOne.shortDescription}}</mat-card-content>
     </mat-card>
-    <mat-card class="career" *ngIf="myMatches.careerTwo" routerLink="/Career/{{myMatches.careerTwo.id}}" 
+    <mat-card class="career column" *ngIf="myMatches.careerTwo" routerLink="/Career/{{myMatches.careerTwo.id}}" 
      mat-ripple>
           <mat-card-title>{{myMatches.careerTwo.name}}</mat-card-title>
           <mat-card-content>{{myMatches.careerTwo.shortDescription}}</mat-card-content>
     </mat-card>
-    <mat-card class="career" *ngIf="myMatches.careerThree" routerLink="/Career/{{myMatches.careerThree.id}}"
+    <mat-card class="career column" *ngIf="myMatches.careerThree" routerLink="/Career/{{myMatches.careerThree.id}}"
      mat-ripple>
           <mat-card-title>{{myMatches.careerThree.name}}</mat-card-title>
           <mat-card-content>{{myMatches.careerThree.shortDescription}}</mat-card-content>
     </mat-card>
+  </div>
   </div>
 </div>
 <div *ngIf='!myMatches.sector'>

@@ -38,3 +38,11 @@
     outline-width: 1px;
     outline-color: beige;
 }
+.roadmap-button{
+    text-align: center;
+    background-color: #f2f1ee;
+}
+
+.long-button{
+    width: 100%;
+}

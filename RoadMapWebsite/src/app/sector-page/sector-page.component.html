@@ -1,14 +1,15 @@
-<div *ngIf='sector'>
-  <h1>{{sector.name}}</h1>
-  <p>{{sector.description}}</p>
-
-  <div *ngFor='let career of careers'>
-    <div *ngIf='sector.careers.includes(career.id)'>
-      <h2>{{career.name}}</h2>
-      <p>{{career.shortDescription}}</p>
-      <a routerLink="/Career/{{career.id}}">See Career</a>
-    </div>
-  </div>
-
+<div>
+  <img src="../../assets/Phase2.svg" width ="100%">
+</div>
+<div class ="framework" *ngIf='sector'>
+  <div class="mat-h1">{{sector.name}}</div>
+  <h2>{{sector.description}}</h2>
+    <mat-divider></mat-divider>
+    <mat-card class="sector" *ngFor='let career of careers' routerLink="/Career/{{career.id}}"
+         mat-ripple>  
+        <mat-card-title>{{career.name}}</mat-card-title>
+        <mat-card-content>{{career.shortDescription}}</mat-card-content>
+        <mat-divider></mat-divider>
+    </mat-card>
   <button mat-button color=primary (click)="goBack()">go back</button>
 </div>

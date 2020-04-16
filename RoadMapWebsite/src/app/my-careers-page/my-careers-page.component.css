@@ -1,24 +1,25 @@
 .framework{
-    text-align: justify;
+    text-align: center;
+    padding: 1%;
 }
 .mat-card{
     border-color: white;
     box-shadow: none;
 }
 .sector{
-    width: 100%;
-    text-align: left;
-}.careers{
+    margin-top: -5%;
+}
+.careers{
+    margin-top: -4%;
     text-align: justify;
     align-content: center;
-    align-items: stretch;
+}
+.head{
+    color: #003366;
+    text-align: left;
 }
 .career{
-    width: 28%;
-    margin:auto;
-    height: 75%;
     text-align: justify;
-    align-self: stretch;
 }
 .sector:hover {
     background-color: rgba(58, 56, 56, 0.05) !important;
@@ -43,3 +44,18 @@
     border-color: black;
     border-width: 1px;
 }
+.column {
+    float: left;
+    width: 30%;
+    margin: auto;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .row{
+      margin-top: 1%;
+  }

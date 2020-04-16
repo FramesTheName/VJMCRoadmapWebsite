@@ -1,7 +1,14 @@
-<h1>Career Sectors</h1>
-<div *ngFor='let sector of sectors'>
-  <h2>{{sector.name}}</h2>
-  <p>{{sector.description}}</p>
-  <a routerLink="/Sectors/{{sector.id}}">See Sector</a>
+<div>
+  <img src="../../assets/Phase2.svg" width ="100%">
+</div>
+<div class="framework">
+<div class="mat-h1">Career Sectors</div>
+<mat-divider></mat-divider>
+<mat-card class="sector" *ngFor='let sector of sectors' routerLink="/Sectors/{{sector.id}}"
+     mat-ripple>  
+    <mat-card-title>{{sector.name}}</mat-card-title>
+    <mat-card-content>{{sector.description}}</mat-card-content>
+    <mat-divider></mat-divider>
+</mat-card>
 </div>
 <button mat-button (click)="goBack()">go back</button>
