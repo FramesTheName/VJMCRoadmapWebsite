@@ -24,7 +24,7 @@ export const SECTORS: CareerSector[] = [
   {
     "id": 3,
     "name": "Hardware, Services & Infrastructure",
-    "description": "Build and maintain the foundations of an organization�s IT environment",
+    "description": "Build and maintain the foundations of an organization's IT environment",
     "careers": [
       3,
       11,
