@@ -1,43 +1,43 @@
 import { CaseStudy } from '../models/case-study';
 
 export const CASESTUDIES: CaseStudy[] = [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "job": "Tech Talker",
-      "company": "Tech Talkers US",
-      "militaryBranch": "16T",
-      "yearsServed": [
-        2019,
-        2019
-      ],
-      "story": "John Started as Tech talker in 1920 when he ended up serving 1 year active duty in Florida.  Later he became an astronaut, and a fictional character who has long since been used as a filler object for website testing.",
-      "video": "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      "id": 2,
-      "name": "Jane Doe",
-      "job": "Tech Talker",
-      "company": "Tech Talkers US",
-      "militaryBranch": "17T",
-      "yearsServed": [
-        2019,
-        2019
-      ],
-      "story": "Jane Started as Tech talker in 1920 when he ended up serving 1 year active duty in Florida.  Later she became an astronaut, and a fictional character who has long since been used as a filler object for website testing.",
-      "video": "https://www.youtube.com/embed/dQw4w9WgXcQ"
-    },
-    {
-      "id": 3,
-      "name": "John Doe jr.",
-      "job": "Tech Talker",
-      "company": "Tech Talkers US",
-      "militaryBranch": "18T",
-      "yearsServed": [
-        2019,
-        2019
-      ],
-      "story": "John Jr. Started as Tech talker in 1920 when he ended up serving 1 year active duty in Florida.  Later he became an astronaut, and a fictional character who has long since been used as a filler object for website testing.",
-      "video": "https://www.youtube.com/embed/4JZSJ49gVJw"
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Stephen",
+    "job": "Customer Success Specialist",
+    "company": "Cisco",
+    "militaryBranch": "Air Force",
+    "yearsServed": [
+      2009,
+      2019
+    ],
+    "story": "Coming Soon. . .",
+    "video": "https://www.youtube.com/embed/j9WBdThrawA"
+  },
+  {
+    "id": 2,
+    "name": "Ron",
+    "job": "Solutions Architect",
+    "company": "Cisco",
+    "militaryBranch": "Navy",
+    "yearsServed": [
+      1994,
+      2005
+    ],
+    "story": "Coming Soon. . .",
+    "video": "https://www.youtube.com/embed/j9WBdThrawA"
+  },
+  {
+    "id": 3,
+    "name": "Emilio",
+    "job": "Network Consulting Engineer",
+    "company": "Cisco",
+    "militaryBranch": "Army",
+    "yearsServed": [
+      2010,
+      2016
+    ],
+    "story": "Coming Soon. . .",
+    "video": "https://www.youtube.com/embed/j9WBdThrawA"
+  }
+];
