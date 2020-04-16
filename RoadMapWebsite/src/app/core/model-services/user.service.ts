@@ -37,9 +37,9 @@ export class UserService {
    }
 
   matchCareers(myData: PreferenceData): CareerData{
-    this.myCareers.careerOne = this.careers.find(career => career.id === 1);
+    this.myCareers.careerOne = this.careers.find(career => career.id === 16);
     this.myCareers.careerTwo = this.careers.find(career => career.id === 2);
-    this.myCareers.careerThree = this.careers.find(career => career.id === 3);
+    this.myCareers.careerThree = this.careers.find(career => career.id === 17);
     this.myCareers.sector = this.sectors.find(sector => sector.id === 1);
     this.setPreferenceData(myData);
     this.setCareerData(this.myCareers);

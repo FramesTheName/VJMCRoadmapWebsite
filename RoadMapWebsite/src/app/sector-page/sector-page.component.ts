@@ -14,7 +14,8 @@ import { Career } from '../core/models/career';
 })
 export class SectorPageComponent implements OnInit {
   sector: CareerSector;
-  careers: Career[];
+  careers = new Array<Career>();
+
 
   constructor(
     private route: ActivatedRoute,
@@ -25,6 +26,7 @@ export class SectorPageComponent implements OnInit {
   ngOnInit() {
     this.getCareer();
     this.getCareers();
+    this.getMyCareers();
   }
 
   getCareer() {
@@ -33,8 +35,16 @@ export class SectorPageComponent implements OnInit {
       .subscribe(career => this.sector = career);
   }
   getCareers() {
-    this.careerService.getCareers()
-      .subscribe(careers => this.careers = careers);
+    for(var careerID of this.sector.careers){
+      let newCareer;
+      this.careerService.getCareer(careerID)
+      .subscribe(career => newCareer = career);
+      this.careers.push(newCareer);
+    }
+  }
+
+  getMyCareers(){
+
   }
 
   goBack(): void {

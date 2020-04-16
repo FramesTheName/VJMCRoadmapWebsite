@@ -4,11 +4,13 @@
 <div class="framework">
 <div class="mat-h1">Career Sectors</div>
 <mat-divider></mat-divider>
-<mat-card class="sector" *ngFor='let sector of sectors' routerLink="/Sectors/{{sector.id}}"
+<div *ngFor='let sector of sectors' >
+<mat-card class="sector" routerLink="/Sectors/{{sector.id}}"
      mat-ripple>  
     <mat-card-title>{{sector.name}}</mat-card-title>
     <mat-card-content>{{sector.description}}</mat-card-content>
-    <mat-divider></mat-divider>
 </mat-card>
+<mat-divider></mat-divider>
+</div>
 </div>
 <button mat-button (click)="goBack()">go back</button>

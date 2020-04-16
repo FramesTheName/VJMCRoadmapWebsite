@@ -2,12 +2,14 @@
   <img src="../../assets/Phase2.svg" width ="100%">
 </div>
 <div class="framework" *ngIf="myMatches">
-<div class="mat-display-1 head">Here is your top Sector</div>
+<div class="mat-display-1 head">Here is your top Sector
+</div>
     <mat-card class="sector" *ngIf="myMatches.sector" routerLink="/Sectors/{{myMatches.sector.id}}"
      mat-ripple>  
         <mat-card-title>{{myMatches.sector.name}}</mat-card-title>
         <mat-card-content>{{myMatches.sector.description}}</mat-card-content>
     </mat-card>
+    <mat-divider></mat-divider>
     <div class="row">
       <div class="mat-display-1 head">Here are your top three Careers</div>
       <div class="careers">
