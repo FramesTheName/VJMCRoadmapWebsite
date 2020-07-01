@@ -1,20 +1,54 @@
-.title{
-    margin-left: 5%;
+.title {
+  margin-left: 5%;
 }
-.start{
-    text-align: right;
-    margin-right: 15%;
+.start-button {
+  text-align: center;
+  color: #003366;
+  background-color: #f2f1ee;
+  margin-right: 20%;
+  margin-left: 20%;
+  padding: 0.5%;
+  border-color: #707070;
+  border-style: solid;
+  box-shadow: none;
+  font-size: 20px;
+  font-weight: 500;
 }
-#overview-element{
-    cursor: default;
-    .node:hover{
-        cursor: pointer;
-        stroke: #f0d270 !important;
-        .inside{
-        fill: #f0d270 !important;
-        }
+.start-button:hover {
+  cursor: pointer;
+}
+#overview-element {
+  cursor: default;
+  .node:hover {
+    cursor: pointer;
+    stroke: #f0d270 !important;
+    .inside {
+      fill: #f0d270 !important;
     }
-
-    
+  }
 }
-
+.open {
+  text-align: center;
+  padding-bottom: 2%;
+  font-size: 16px;
+}
+.explanation-box {
+  margin: 2%;
+  border-width: 1 px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 25px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: #f2f1ee;
+}
+.title {
+  margin-bottom: 6px;
+}
+.phase {
+}
+.description {
+  margin-left: 3%;
+  margin-right: 3%;
+  text-indent: 0px;
+}

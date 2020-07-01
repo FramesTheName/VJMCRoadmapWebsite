@@ -1,6 +1,6 @@
-export interface Job{
-    id: number;
-    name: string;
-    description: string;
-    link: URL;
+export interface Job {
+  id: number;
+  name: string;
+  description: string;
+  link: URL;
 }

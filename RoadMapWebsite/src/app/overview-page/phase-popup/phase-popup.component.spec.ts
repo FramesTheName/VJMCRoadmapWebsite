@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { OverviewPageComponent } from "./overview-page.component";
+import { PhasePopupComponent } from "./phase-popup.component";
 
-describe("OverviewPageComponent", () => {
-  let component: OverviewPageComponent;
-  let fixture: ComponentFixture<OverviewPageComponent>;
+describe("PhasePopupComponent", () => {
+  let component: PhasePopupComponent;
+  let fixture: ComponentFixture<PhasePopupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [OverviewPageComponent],
+      declarations: [PhasePopupComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OverviewPageComponent);
+    fixture = TestBed.createComponent(PhasePopupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

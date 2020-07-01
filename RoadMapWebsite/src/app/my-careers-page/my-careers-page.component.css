@@ -1,61 +1,61 @@
-.framework{
-    text-align: center;
-    padding: 1%;
+.framework {
+  text-align: center;
+  padding: 1%;
 }
-.mat-card{
-    border-color: white;
-    box-shadow: none;
+.mat-card {
+  border-color: white;
+  box-shadow: none;
 }
-.sector{
-    margin-top: -5%;
+.sector {
+  margin-top: -5%;
 }
-.careers{
-    margin-top: -4%;
-    text-align: justify;
-    align-content: center;
+.careers {
+  margin-top: -4%;
+  text-align: justify;
+  align-content: center;
 }
-.head{
-    color: #003366;
-    text-align: left;
+.head {
+  color: #003366;
+  text-align: left;
 }
-.career{
-    text-align: justify;
+.career {
+  text-align: justify;
 }
 .sector:hover {
-    background-color: rgba(58, 56, 56, 0.05) !important;
-    cursor: pointer;
+  background-color: rgba(58, 56, 56, 0.05) !important;
+  cursor: pointer;
 }
 .career:hover {
-    background-color: rgba(58, 56, 56, 0.05) !important;
-    cursor: pointer;
+  background-color: rgba(58, 56, 56, 0.05) !important;
+  cursor: pointer;
 }
 .mat-card:focus {
-    outline: none;
- }
-.router-Link{
-    border: none;
+  outline: none;
 }
-.mat-card-title{
-    text-align: center;
+.router-Link {
+  border: none;
 }
-.center-line{
-    width: 100%;
-    border-top: thin;
-    border-color: black;
-    border-width: 1px;
+.mat-card-title {
+  text-align: center;
+}
+.center-line {
+  width: 100%;
+  border-top: thin;
+  border-color: black;
+  border-width: 1px;
 }
 .column {
-    float: left;
-    width: 30%;
-    margin: auto;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  .row{
-      margin-top: 1%;
-  }
+  float: left;
+  width: 30%;
+  margin: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.row {
+  margin-top: 1%;
+}

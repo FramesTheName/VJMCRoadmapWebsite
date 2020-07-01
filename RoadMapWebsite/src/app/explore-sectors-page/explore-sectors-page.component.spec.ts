@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ExploreSectorsPageComponent } from './explore-sectors-page.component';
+import { ExploreSectorsPageComponent } from "./explore-sectors-page.component";
 
-describe('ExploreSectorsPageComponent', () => {
+describe("ExploreSectorsPageComponent", () => {
   let component: ExploreSectorsPageComponent;
   let fixture: ComponentFixture<ExploreSectorsPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ExploreSectorsPageComponent ]
-    })
-    .compileComponents();
+      declarations: [ExploreSectorsPageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ExploreSectorsPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

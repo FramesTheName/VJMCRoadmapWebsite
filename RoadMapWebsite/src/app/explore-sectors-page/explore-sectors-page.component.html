@@ -1,16 +1,15 @@
 <div>
-  <img src="../../assets/Phase2.svg" width ="100%">
+  <img src="../../assets/Phase2.svg" width="100%" />
 </div>
 <div class="framework">
-<div class="mat-h1">Career Sectors</div>
-<mat-divider></mat-divider>
-<div *ngFor='let sector of sectors' >
-<mat-card class="sector" routerLink="/Sectors/{{sector.id}}"
-     mat-ripple>  
-    <mat-card-title>{{sector.name}}</mat-card-title>
-    <mat-card-content>{{sector.description}}</mat-card-content>
-</mat-card>
-<mat-divider></mat-divider>
-</div>
+  <div class="mat-h1">Career Sectors</div>
+  <mat-divider></mat-divider>
+  <div *ngFor="let sector of sectors">
+    <mat-card class="sector" routerLink="/Sectors/{{ sector.id }}" mat-ripple>
+      <mat-card-title>{{ sector.name }}</mat-card-title>
+      <mat-card-content>{{ sector.description }}</mat-card-content>
+    </mat-card>
+    <mat-divider></mat-divider>
+  </div>
 </div>
 <button mat-button (click)="goBack()">go back</button>

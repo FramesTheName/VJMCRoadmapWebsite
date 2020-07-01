@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RoadmapPageComponent } from './roadmap-page.component';
+import { RoadmapPageComponent } from "./roadmap-page.component";
 
-describe('RoadmapPageComponent', () => {
+describe("RoadmapPageComponent", () => {
   let component: RoadmapPageComponent;
   let fixture: ComponentFixture<RoadmapPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoadmapPageComponent ]
-    })
-    .compileComponents();
+      declarations: [RoadmapPageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('RoadmapPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

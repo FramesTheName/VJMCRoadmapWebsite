@@ -1,48 +1,48 @@
-.framework{
-    text-align: center;
+.framework {
+  text-align: center;
 }
-.first-line{
-    width: 100%;
-    display: inline-flexbox;
-}
-
-.mat-display-3{
-    width: 40%;
-    align-self: flex-start;
-    margin-right: 2%;
-    padding-right: 2%;
-}
-.title{
-    text-align: left;
-    margin-left: 7.5%;
-    margin-bottom: 7.5%;
-    margin-top: 2%;
-    align-self: flex-start;
-}
-.study-button{
-    text-align: right;
-    align-self: flex-end;
-    margin-right: 10%;
-    margin-top: -11%;
-    margin-bottom: 5%;  
-}
-.study-button-words{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    line-height: 120%;
-    text-align: center;
+.first-line {
+  width: 100%;
+  display: inline-flexbox;
 }
 
-.mat-expansion-panel{
-    box-shadow: none;
-    outline-width: 1px;
-    outline-color: beige;
+.mat-display-3 {
+  width: 40%;
+  align-self: flex-start;
+  margin-right: 2%;
+  padding-right: 2%;
 }
-.roadmap-button{
-    text-align: center;
-    background-color: #f2f1ee;
+.title {
+  text-align: left;
+  margin-left: 7.5%;
+  margin-bottom: 7.5%;
+  margin-top: 2%;
+  align-self: flex-start;
+}
+.study-button {
+  text-align: right;
+  align-self: flex-end;
+  margin-right: 10%;
+  margin-top: -11%;
+  margin-bottom: 5%;
+}
+.study-button-words {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  line-height: 120%;
+  text-align: center;
 }
 
-.long-button{
-    width: 100%;
+.mat-expansion-panel {
+  box-shadow: none;
+  outline-width: 1px;
+  outline-color: beige;
+}
+.roadmap-button {
+  text-align: center;
+  background-color: #f2f1ee;
+}
+
+.long-button {
+  width: 100%;
 }

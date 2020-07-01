@@ -19,6 +19,7 @@ import { CareerPathPageComponent } from './career-path-page/career-path-page.com
 import { MyCareersPageComponent } from './my-careers-page/my-careers-page.component';
 import { CaseStudyPageComponent } from './case-study-page/case-study-page.component';
 import { CaseStudyPopupComponent } from './career-path-page/case-study-popup/case-study-popup.component';
+import { PhasePopupComponent } from './overview-page/phase-popup/phase-popup.component';
 
 
 
@@ -34,7 +35,8 @@ import { CaseStudyPopupComponent } from './career-path-page/case-study-popup/cas
     CareerPathPageComponent,
     MyCareersPageComponent,
     CaseStudyPageComponent,
-    CaseStudyPopupComponent
+    CaseStudyPopupComponent,
+    PhasePopupComponent
   ],
   imports: [
     HttpClientModule,

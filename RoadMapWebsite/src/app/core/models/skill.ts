@@ -1,5 +1,5 @@
-export interface Skill{
-    id: number;
-    name: string;
-    description: string;
+export interface Skill {
+  id: number;
+  name: string;
+  description: string;
 }

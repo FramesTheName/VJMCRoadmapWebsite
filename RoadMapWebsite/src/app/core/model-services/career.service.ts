@@ -1,41 +1,36 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-import { catchError, map, tap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { catchError, map, tap } from "rxjs/operators";
+import { Observable, of } from "rxjs";
 
-import { CAREERS } from '../mock-models/mock-careers';
-import { Career } from '../models/career';
+import { CAREERS } from "../mock-models/mock-careers";
+import { Career } from "../models/career";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class CareerService {
-  private careersUrl = 'jdbc:mysql://framedstudies.com:3306/RoadmapDB';  // URL to web api
+  private careersUrl = "jdbc:mysql://framedstudies.com:3306/RoadmapDB"; // URL to web api
 
-  constructor(
-    private http: HttpClient,
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getCareer(id: number): Observable<Career> {
-    return of(CAREERS.find(career => career.id === id));
+    return of(CAREERS.find((career) => career.id === id));
   }
 
   getCareers(): Observable<Career[]> {
-    return of(CAREERS)
+    return of(CAREERS);
   }
 
-  
-  
   /**
-  * Handle Http operation that failed.
-  * Let the app continue.
-  * @param operation - name of the operation that failed
-  * @param result - optional value to return as the observable result
-  */
-  private handleError<T> (operation = 'operation', result?: T) {
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
-
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 

@@ -1,0 +1,42 @@
+<div [ngSwitch]="data">
+  <div *ngSwitchCase="'node1'">
+    <h1 class=".mat-display-1 title">Phase 1: Skill Profile</h1>
+    <p class="description">
+      Phase 1 is where we get a vision of who you are. In phase 1 we look at
+      different skills and try to find and match you to a career that values
+      skills and certifications that you have already developed. Though we match
+      you with a career in this phase, the true goal is to help you think about
+      what abilities you have already gained, and help you to understand your
+      desires for a career in IT.
+    </p>
+  </div>
+  <div *ngSwitchCase="'node2'">
+    <h1 class=".mat-display-1 title">Phase 2: Choose a Path</h1>
+    <p class="description">
+      In Phase 2 we take the careers that you've matched with as well as an IT
+      sector that you can fit into, and we let you explore. The goal is to help
+      you understand the different careers including the time required to
+      succeed and average salaries in this career. If you would like to explore
+      the sectors and choose a path without being matched you can also click the
+      explore Sectors tab up above.
+    </p>
+  </div>
+  <div *ngSwitchCase="'node3'">
+    <h1 class=".mat-display-1 title">Phase 3: Effort Required</h1>
+  </div>
+  <div *ngSwitchCase="'node4'">
+    <h1 class=".mat-display-1 title">Phase 4: The Big Picture</h1>
+  </div>
+  <div *ngSwitchCase="'node7'">
+    <h1 class=".mat-display-1 title">Start</h1>
+  </div>
+  <div *ngSwitchCase="'node8'">
+    <h1 class=".mat-display-1 title">Career Ready</h1>
+  </div>
+  <div *ngSwitchDefault>
+    <h1 class=".mat-display-1 title">How?</h1>
+  </div>
+</div>
+<div class="close-button">
+  <button mat-button color="primary" (click)="onCloseClick()">Close</button>
+</div>

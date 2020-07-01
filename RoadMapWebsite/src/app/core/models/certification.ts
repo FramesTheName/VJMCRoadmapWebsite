@@ -1,6 +1,6 @@
-export interface Certification{
-    id: number;
-    name: string;
-    description: string;
-    link: string;
+export interface Certification {
+  id: number;
+  name: string;
+  description: string;
+  link: string;
 }
