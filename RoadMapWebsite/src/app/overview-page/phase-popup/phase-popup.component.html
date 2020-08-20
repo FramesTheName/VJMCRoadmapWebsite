@@ -1,3 +1,6 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="primary">close</mat-icon>
+</button>
 <div [ngSwitch]="data">
   <div *ngSwitchCase="'node1'">
     <h1 class=".mat-display-1 title">Phase 1: Skill Profile</h1>
@@ -9,7 +12,20 @@
       what abilities you have already gained, and help you to understand your
       desires for a career in IT.
     </p>
+    <div class="transition-buttons">
+      <div class="back-button">
+        <button mat-button color="primary" (click)="onNextClick('node7')">
+          <mat-icon class="next-icon">chevron_left</mat-icon>
+        </button>
+      </div>
+      <div class="next-button">
+        <button mat-button color="primary" (click)="onNextClick('node2')">
+          <mat-icon class="next-icon">chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
+
   <div *ngSwitchCase="'node2'">
     <h1 class=".mat-display-1 title">Phase 2: Choose a Path</h1>
     <p class="description">
@@ -20,23 +36,76 @@
       the sectors and choose a path without being matched you can also click the
       explore Sectors tab up above.
     </p>
+
+    <div class="transition-buttons">
+      <div class="back-button">
+        <button mat-button color="primary" (click)="onNextClick('node1')">
+          <mat-icon class="next-icon">chevron_left</mat-icon>
+        </button>
+      </div>
+      <div class="next-button">
+        <button mat-button color="primary" (click)="onNextClick('node3')">
+          <mat-icon class="next-icon">chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
+
   <div *ngSwitchCase="'node3'">
     <h1 class=".mat-display-1 title">Phase 3: Effort Required</h1>
+    <div class="transition-buttons">
+      <div class="back-button">
+        <button mat-button color="primary" (click)="onNextClick('node2')">
+          <mat-icon class="next-icon">chevron_left</mat-icon>
+        </button>
+      </div>
+      <div class="next-button">
+        <button mat-button color="primary" (click)="onNextClick('node4')">
+          <mat-icon class="next-icon">chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
+
   <div *ngSwitchCase="'node4'">
     <h1 class=".mat-display-1 title">Phase 4: The Big Picture</h1>
+    <div class="transition-buttons">
+      <div class="back-button">
+        <button mat-button color="primary" (click)="onNextClick('node3')">
+          <mat-icon class="next-icon">chevron_left</mat-icon>
+        </button>
+      </div>
+      <div class="next-button">
+        <button mat-button color="primary" (click)="onNextClick('node8')">
+          <mat-icon class="next-icon">chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
+
   <div *ngSwitchCase="'node7'">
     <h1 class=".mat-display-1 title">Start</h1>
+    <div class="transition-buttons">
+      <div class="next-button">
+        <button mat-button color="primary" (click)="onNextClick('node1')">
+          <mat-icon class="next-icon">chevron_right</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
+
   <div *ngSwitchCase="'node8'">
     <h1 class=".mat-display-1 title">Career Ready</h1>
+    <div class="transition-buttons">
+      <div class="back-button">
+        <button mat-button color="primary" (click)="onNextClick('node4')">
+          <mat-icon class="next-icon">chevron_left</mat-icon>
+        </button>
+      </div>
+    </div>
   </div>
+
   <div *ngSwitchDefault>
     <h1 class=".mat-display-1 title">How?</h1>
   </div>
-</div>
-<div class="close-button">
-  <button mat-button color="primary" (click)="onCloseClick()">Close</button>
 </div>

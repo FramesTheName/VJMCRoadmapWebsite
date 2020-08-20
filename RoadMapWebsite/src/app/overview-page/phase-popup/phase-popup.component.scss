@@ -1,9 +1,60 @@
 .title {
   text-align: center;
+  font-size: 24px;
 }
 .description {
-  font-size: 16px;
+  font-size: 17px;
+  padding-bottom: 12%;
+}
+.transition-buttons {
+  display: flexbox;
+  position: fixed;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  left: 35%;
+  right: 35%;
+  bottom: 10%;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+}
+.next-button {
+  float: right;
+}
+.back-button {
+  float: left;
 }
 .close-button {
-  text-align: right;
+  float: right;
+  top: -24px;
+  right: -24px;
+}
+.mat-icon {
+  font-size: 16px;
+}
+.close-icon {
+  transition: all 0.3s ease-in-out;
+}
+.close-icon:hover {
+  transform: scale(1.5);
+}
+.next-icon {
+  font-size: 22px;
+  transform: scale(1.5);
+  transition: all 0.3s ease-in-out;
+}
+.next-icon:hover {
+  transform: scale(2);
+}
+
+.mat-icon-button ::ng-deep .mat-button-focus-overlay {
+  display: none;
+}
+.mat-button ::ng-deep .mat-button-focus-overlay {
+  display: none;
+}
+.mat-button ::ng-deep .mat-button-ripple {
+  display: none;
+}
+.mat-icon-button ::ng-deep .mat-button-ripple {
+  display: none;
 }

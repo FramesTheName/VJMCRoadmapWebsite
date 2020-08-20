@@ -30,10 +30,9 @@ export class OverviewPageComponent implements OnInit {
   }
 
   private openPhaseInfo(phase: string) {
-    console.log(phase);
     const dialogRef = this.dialog.open(PhasePopupComponent, {
       width: "30%",
-      height: "60%",
+      height: "80%",
       data: phase,
     });
   }
@@ -45,7 +44,6 @@ export class OverviewPageComponent implements OnInit {
       for (let i = 0; i < path.length; ++i) {
         const node = path[i];
         if (node.id === "mapSvg") {
-          console.log("top");
           // Isn't a phase
           return;
         }
