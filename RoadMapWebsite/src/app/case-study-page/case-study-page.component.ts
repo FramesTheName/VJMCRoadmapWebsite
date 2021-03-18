@@ -30,10 +30,13 @@ export class CaseStudyPageComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get("id");
     this.studyService
       .getCaseStudy(id)
-      .subscribe((study) => (this.study = study));
-    this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
-      this.study.video
-    );
+      .subscribe((study) => {
+        this.study = study
+        this.safeSrc = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.study.video
+      );
+      console.log(this.study)
+    });
   }
 
   goBack(): void {

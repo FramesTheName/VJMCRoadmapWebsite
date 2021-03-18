@@ -18,8 +18,8 @@ export class UserService {
   myCareers = new CareerData();
   skills: Skill[];
   certifications: Certification[];
-  careers: Career[];
-  sectors: CareerSector[];
+  careers: any[];
+  sectors: any[];
 
   constructor(
     private careerService: CareerService,
@@ -37,22 +37,36 @@ export class UserService {
   }
 
   matchCareers(myData: PreferenceData): CareerData {
-    this.myCareers.careerOne = this.careers.find((career) => career.id === 16);
-    this.myCareers.careerTwo = this.careers.find((career) => career.id === 2);
-    this.myCareers.careerThree = this.careers.find(
-      (career) => career.id === 17
-    );
-    this.myCareers.sector = this.sectors.find((sector) => sector.id === 1);
+    this.careerService.getCareer(16)
+    .subscribe(career =>{
+      this.myCareers.careerOne = career
+    });
+    this.careerService.getCareer(2)
+    .subscribe(career =>{
+      this.myCareers.careerTwo = career
+    });
+    this.careerService.getCareer(17)
+    .subscribe(career =>{
+      this.myCareers.careerThree = career
+    });
+    console.log(this.myCareers)
+    this.sectorService.getSector(1)
+    .subscribe(sector =>{
+      this.myCareers.sector = sector
+    });
     this.setPreferenceData(myData);
     this.setCareerData(this.myCareers);
 
     return this.myCareers;
   }
 
+
   getCareers() {
     this.careerService
       .getCareers()
-      .subscribe((careers) => (this.careers = careers));
+      .subscribe((careers) => {
+        this.careers = careers
+      });
   }
 
   getSectors() {

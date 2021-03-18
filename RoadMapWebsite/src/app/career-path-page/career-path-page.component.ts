@@ -21,7 +21,7 @@ import { CertificationService } from "../core/model-services/certification.servi
   styleUrls: ["./career-path-page.component.css"],
 })
 export class CareerPathPageComponent implements OnInit {
-  career: Career;
+  career: any;
   studies: CaseStudy[];
   entryCerts = new Array<Certification>();
   beginCerts = new Array<Certification>();
@@ -42,35 +42,44 @@ export class CareerPathPageComponent implements OnInit {
   ngOnInit() {
     this.getCareer();
     this.getStudies();
-    this.getCertificaitons();
-    this.getCareerCerts();
   }
 
   getStudies() {
     this.studyService
       .getStudies()
-      .subscribe((studies) => (this.studies = studies));
+      .subscribe((studies) => {
+        this.studies = studies
+        console.log(this.studies)
+      });
   }
 
   getCareer() {
     const id = +this.route.snapshot.paramMap.get("id");
     this.careerService
       .getCareer(id)
-      .subscribe((career) => (this.career = career));
+      .subscribe((career) => {
+        this.career = career
+        this.getCertificaitons();
+      }
+      );
   }
 
   getCertificaitons() {
     this.certService
       .getCertifications()
-      .subscribe((certs) => (this.allCerts = certs));
+      .subscribe((certs) => {
+        this.allCerts = certs
+        this.getCareerCerts();
+      }
+      );
   }
 
   getCareerCerts() {
-    for (var cert of this.career.certValue) {
+    for (var cert of this.career.certvalue) {
       var certID = cert[0];
       var certVal = cert[1];
       var certifcation = this.allCerts.find(
-        (certificate) => certificate.id === certID
+        (certificate) => certificate.id == certID
       );
       if (certVal == 4) {
         this.beginCerts.push(certifcation);

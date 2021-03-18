@@ -23,7 +23,9 @@ export class ExploreSectorsPageComponent implements OnInit {
   getSectors() {
     this.sectorService
       .getSectors()
-      .subscribe((sectors) => (this.sectors = sectors));
+      .subscribe((sectors) => {
+        this.sectors = sectors
+      });
   }
 
   goBack(): void {

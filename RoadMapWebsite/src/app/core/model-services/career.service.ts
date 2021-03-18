@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient} from "@angular/common/http";
 
-import { catchError, map, tap } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { Observable, of } from "rxjs";
 
 import { CAREERS } from "../mock-models/mock-careers";
@@ -11,39 +11,47 @@ import { Career } from "../models/career";
   providedIn: "root",
 })
 export class CareerService {
-  private careersUrl = "jdbc:mysql://framedstudies.com:3306/RoadmapDB"; // URL to web api
 
   constructor(private http: HttpClient) {}
 
   getCareer(id: number): Observable<Career> {
-    return of(CAREERS.find((career) => career.id === id));
+    //return of(CAREERS.find((career) => career.id === id))
+    return (this.getCareers().pipe(
+      map(txs => txs.find(txn => txn.id == id))
+      )
+    );
   }
 
-  getCareers(): Observable<Career[]> {
-    return of(CAREERS);
-  }
+  public getCareers(): Observable<Career[]> {
+    const sheetno="od6"
+         const sheetid = "1XhjK3Enh19TIxCxgIC7mma89CMohAmpFUbJzGiPP7Fk"
+         const url = 
+    `https://spreadsheets.google.com/feeds/list/${sheetid}/${sheetno}/public/values?alt=json`;
+        
+    return this.http.get<Career[]>(url)
+    .pipe(
+      map((sectors: any) => {
+        const data = sectors.feed.entry;
+                
+        const returnArray: Array<any> = [];
+        if (data && data.length > 0) {
+          data.forEach(entry => {
+            const obj = {};
+            for (const x in entry) {
+              if (x.includes('gsx$') && entry[x].$t && entry[x].$t.startsWith('[')) {
+                obj[x.split('$')[1]] = JSON.parse(entry[x]['$t']);
+              }else if (x.includes('gsx$') && entry[x].$t) {
+                obj[x.split('$')[1]] = entry[x]['$t'];
+              }
+            }
+            returnArray.push(obj);
+          });
+        }
+        const myArray = <Career[]>returnArray
+        return myArray;
+      })
+    );
+}
 
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T>(operation = "operation", result?: T) {
-    return (error: any): Observable<T> => {
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
-
-  /** Log a HeroService message with the MessageService */
-  private log(message: string) {
-    console.log(message);
-  }
+  
 }

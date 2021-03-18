@@ -14,6 +14,7 @@ import { Career } from "../core/models/career";
 })
 export class SectorPageComponent implements OnInit {
   sector: CareerSector;
+  sectors: CareerSector[];
   careers = new Array<Career>();
 
   constructor(
@@ -25,27 +26,29 @@ export class SectorPageComponent implements OnInit {
 
   ngOnInit() {
     this.getCareer();
-    this.getCareers();
-    this.getMyCareers();
   }
 
   getCareer() {
     const id = +this.route.snapshot.paramMap.get("id");
     this.careerSectorService
       .getSector(id)
-      .subscribe((career) => (this.sector = career));
+      .subscribe((career) => {
+      this.sector = career
+      this.getCareers(this.sector);
+      });
   }
-  getCareers() {
-    for (var careerID of this.sector.careers) {
+
+  getCareers(sector: any) {
+    for (var careerID of sector.careers) {
       let newCareer;
       this.careerService
         .getCareer(careerID)
-        .subscribe((career) => (newCareer = career));
-      this.careers.push(newCareer);
+        .subscribe((career) => {
+        newCareer = career
+        this.careers.push(newCareer);
+        });
     }
   }
-
-  getMyCareers() {}
 
   goBack(): void {
     this.location.back();

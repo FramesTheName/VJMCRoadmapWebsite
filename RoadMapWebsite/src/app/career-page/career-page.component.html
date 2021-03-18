@@ -4,16 +4,16 @@
 <div class="framework">
   <div *ngIf="career">
     <div class="mat-h1">{{ career.name }}</div>
-    <div class="shortDescript">{{ career.shortDescription }}</div>
+    <div class="shortDescript">{{ career.shortdescription }}</div>
     <mat-divider></mat-divider>
     <b>
       <div class="point">
-        Salary: {{ career.salaryRange[0] | currency: "USD":"symbol":"1.0-0" }} -
-        {{ career.salaryRange[1] | currency: "USD":"symbol":"1.0-0" }}
+        Salary: {{ career.salaryrange[0] | currency: "USD":"symbol":"1.0-0" }} -
+        {{ career.salaryrange[1] | currency: "USD":"symbol":"1.0-0" }}
       </div>
-      <div class="point">Prior Experience: {{ career.priorExperience }}</div>
+      <div class="point">Prior Experience: {{ career.priorexperience }}</div>
       <div class="point">
-        Estimated Time to Completion: {{ career.estimatedCompletion }}
+        Estimated Time to Completion: {{ career.estimatedcompletion }}
       </div>
     </b>
     <mat-divider></mat-divider>
@@ -23,7 +23,7 @@
   </div>
 </div>
 <mat-divider></mat-divider>
-<div class="path-button">
+<div *ngIf="career" class="path-button">
   <a routerLink="/CareerPath/{{ career.id }}"
     ><button mat-button class="long-button" color="primary">
       See this Career Path

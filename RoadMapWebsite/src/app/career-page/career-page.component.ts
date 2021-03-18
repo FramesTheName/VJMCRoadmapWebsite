@@ -27,7 +27,9 @@ export class CareerPageComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get("id");
     this.careerService
       .getCareer(id)
-      .subscribe((career) => (this.career = career));
+      .subscribe((career) => {
+        this.career = career
+      });
   }
 
   goBack(): void {

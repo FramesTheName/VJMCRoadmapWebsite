@@ -9,12 +9,13 @@
       before</mat-card-content
     >
   </mat-card>
+  <ng-container *ngFor="let study of data">
   <mat-card
     class="case-study"
-    *ngFor="let study of data"
     routerLink="/CaseStudy/{{ study.id }}"
     (click)="onNoClick()"
     mat-ripple
+    *ngIf="study.id < 4"
   >
     <mat-card-title>{{ study.name }}</mat-card-title>
     <mat-card-content>
@@ -23,6 +24,7 @@
       <div><span>Military Branch: </span>{{ study.militaryBranch }}</div>
     </mat-card-content>
   </mat-card>
+</ng-container>
   <div>
     <button mat-button color="primary" (click)="onNoClick()">No Thanks</button>
   </div>

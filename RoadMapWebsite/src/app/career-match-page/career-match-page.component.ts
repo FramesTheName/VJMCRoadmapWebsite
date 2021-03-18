@@ -147,12 +147,16 @@ export class CareerMatchPageComponent implements OnInit {
   getCerts() {
     this.certificationService
       .getCertifications()
-      .subscribe((certifications) => (this.certifications = certifications));
-    this.allCertifications = this.certifications.map((a) => a.name);
+      .subscribe((certifications) => {
+        this.certifications = certifications
+      this.allCertifications = this.certifications.map((a) => a.name)
+    });
   }
 
   getSkills() {
-    this.skillService.getSkills().subscribe((skills) => (this.skills = skills));
+    this.skillService.getSkills().subscribe((skills) => {
+      this.skills = skills
+    });
   }
 
   goBack(): void {
